@@ -56,31 +56,37 @@ const Header = () => {
   };
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex gap-2 justify-between w-full p-2'>
-        <div className='flex gap-2'>
-          <Link to="/">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Home
+    <div className='flex flex-col items-center'>
+      <div className='flex flex-col lg:flex-row gap-2 justify-center lg:justify-between  w-full p-2'>
+        <div className='flex flex-col lg:flex-row gap-2'>
+          <div className='flex justify-center gap-1'>
+            <Link to="/">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Home
+              </button>
+            </Link>
+            <button onClick={handleCreateClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Create User
             </button>
-          </Link>
-          <button onClick={handleCreateClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Create User
-          </button>
-          <Link to="/CreateTeam" target="_blank">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Create Team
-            </button>
-          </Link>
-          <Link to="/AllTeam" target="_blank">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              View Teams
-            </button>
-          </Link>
+          </div>
+          <div className='flex justify-center gap-1'>
+            <Link to="/CreateTeam" target="_blank">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Create Team
+              </button>
+            </Link>
+            <Link to="/AllTeam" target="_blank">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                View Teams
+              </button>
+            </Link>
+          </div>
+          
+          
         </div>
 
 
-        <div className='flex items-center'>
+        <div className='flex justify-center items-center'>
           <div>
             <input
               type="text"
@@ -97,10 +103,9 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div
-        className='flex p-2 gap-1'
-      >
-        <button className='bg-blue-500 p-1 border rounded' onClick={handleFilterSubmit}>Filter</button>
+
+
+      <div className='flex flex-col lg:flex-row  p-2 gap-1'>
         <div className='flex'>
             <select
               id="domain"
@@ -153,7 +158,7 @@ const Header = () => {
             <option value="false">False</option>
           </select>
         </div>
-
+        <button className='bg-blue-500 p-1 border rounded' onClick={handleFilterSubmit}>Filter</button>
       </div>
 
       {showCreateForm && (
