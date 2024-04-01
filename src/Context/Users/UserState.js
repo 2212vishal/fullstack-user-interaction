@@ -1,6 +1,6 @@
 import UserContext from "./UserContext";
 import { useState } from "react";
-const URL = "http://localhost:4000";
+const URL = "https://fullstack-user-interaction-backend.onrender.com";
 
 const UserState = (props) => {
   const [user, setUser] = useState([]);
